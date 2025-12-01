@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación Interactiva - App de Pedidos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100">
+
+    <div class="min-h-screen flex justify-center py-6">
+        <div id="presentation-container" class="max-w-7xl w-full bg-[var(--color-background)] rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+
+            <aside id="sidebar" class="w-64 bg-white p-5 shadow-lg flex-shrink-0">
+                <h2 class="text-xl font-extrabold mb-4 text-[var(--color-primary)]">Presentación</h2>
+                <ul id="slide-nav" class="list-none p-0">
+                    <li data-slide="0" class="active cursor-pointer p-3 mb-2 rounded-lg text-gray-700 hover:bg-gray-100 transition duration-150 font-semibold flex items-center bg-[var(--color-accent)]/20 text-[var(--color-primary)]">
+                        <i class="fas fa-home w-5 mr-3"></i> 0. Inicio App
+                    </li>
+                    <li data-slide="1" class="cursor-pointer p-3 mb-2 rounded-lg text-gray-700 hover:bg-gray-100 transition duration-150 font-semibold flex items-center">
+                        <i class="fas fa-rocket w-5 mr-3 text-[var(--color-primary)]"></i> 1. Introducción
+                    </li>
+                    <li data-slide="2" class="cursor-pointer p-3 mb-2 rounded-lg text-gray-700 hover:bg-gray-100 transition duration-150 font-semibold flex items-center">
+                        <i class="fas fa-sitemap w-5 mr-3 text-[var(--color-primary)]"></i> 2. Flujo y Lógica
+                    </li>
+                    <li data-slide="3" class="cursor-pointer p-3 mb-2 rounded-lg text-gray-700 hover:bg-gray-100 transition duration-150 font-semibold flex items-center">
+                        <i class="fas fa-code w-5 mr-3 text-[var(--color-primary)]"></i> 3. Código Clave
+                    </li>
+                    <li data-slide="4" class="cursor-pointer p-3 mb-2 rounded-lg text-gray-700 hover:bg-gray-100 transition duration-150 font-semibold flex items-center">
+                        <i class="fas fa-database w-5 mr-3 text-[var(--color-primary)]"></i> 4. Esquema DB
+                    </li>
+                    <li data-slide="5" class="cursor-pointer p-3 mb-2 rounded-lg text-gray-700 hover:bg-gray-100 transition duration-150 font-semibold flex items-center">
+                        <i class="fas fa-link w-5 mr-3 text-[var(--color-primary)]"></i> 5. Conexión API
+                    </li>
+                    <li data-slide="6" class="cursor-pointer p-3 mb-2 rounded-lg text-gray-700 hover:bg-gray-100 transition duration-150 font-semibold flex items-center">
+                        <i class="fas fa-table w-5 mr-3 text-[var(--color-primary)]"></i> 6. Muestra de Datos
+                    </li>
+                    <li data-slide="7" class="cursor-pointer p-3 mb-2 rounded-lg text-gray-700 hover:bg-gray-100 transition duration-150 font-semibold flex items-center">
+                        <i class="fas fa-credit-card w-5 mr-3 text-[var(--color-primary)]"></i> 7. Forma de Pago
+                    </li>
+                    <li data-slide="8" class="cursor-pointer p-3 mb-2 rounded-lg text-gray-700 hover:bg-gray-100 transition duration-150 font-semibold flex items-center">
+                        <i class="fas fa-check-circle w-5 mr-3 text-[var(--color-primary)]"></i> 8. Conclusión
+                    </li>
+                </ul>
+            </aside>
+
+            <main id="content-area" class="p-6 md:p-10 w-full relative">
+
+                <section id="frmInicio" class="slide app-screen active bg-gradient-to-br from-white to-[#E0F7FA] shadow-xl flex justify-center items-center">
+                    <div class="screen-content max-w-lg w-full p-8 bg-white/90 rounded-2xl shadow-2xl backdrop-blur-sm">
+                        <div class="text-center">
+                            <i class="fas fa-utensils text-6xl text-[var(--color-accent)] mb-6 slide-animation"></i>
+                         <div class="text-center">
+                        <i class="fas fa-utensils text-6xl text-[var(--color-accent)] mb-6 slide-animation"></i>
+                        <h1 class="text-4xl font-extrabold mb-4 slide-animation text-gray-800">Sistema de Pedidos Digitales</h1>
+                        <p class="text-xl text-gray-600 mb-10 slide-animation">
+                            Una presentación interactiva.<br>
+                            Edward Cruz Valdivia<br>
+                            Romer Echevarria Encarnacion<br>
+                            Merino Merino David<br>
+                            Sebastian Campos
+                        </p>
+                        <button id="btnInicio" class="btn primary-btn px-8 py-4 text-lg slide-animation">
+                            <i class="fas fa-play mr-2"></i> Comenzar
+                        </button>
+                    </div>
+                       
+                    </div>
+                </section>
+
+                <section id="slide1" class="slide presentation-slide">
+                    <h2 class="text-3xl font-extrabold text-[var(--color-primary)] border-b-4 border-[var(--color-accent)] pb-3 mb-6">1. Introducción: ¿Para qué sirve esta app?</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <p class="text-lg mb-6">Esta aplicación Java busca **modernizar** la toma de pedidos en restaurantes, permitiendo a los meseros en general realizar de formas mas practica y fluida la toma de pedidos asi como el seguimiento de pedidos en el día.</p>
+                            <h3 class="text-2xl font-bold mt-4 text-[var(--color-accent)]">Beneficios Clave:</h3>
+                            <ul class="list-none pl-0 space-y-3 mt-4">
+                                <li class="flex items-start"><i class="fas fa-clock text-xl mr-3 mt-1 text-green-500"></i> <span class="font-medium">Eficiencia:</span> Reducción de hasta un 30% en los tiempos de servicio.</li>
+                                <li class="flex items-start"><i class="fas fa-comment-dots text-xl mr-3 mt-1 text-green-500"></i> <span class="font-medium">Integración:</span> Pedidos enviados directamente a la cocina vía API.</li>
+                                <li class="flex items-start"><i class="fas fa-dollar-sign text-xl mr-3 mt-1 text-green-500"></i> <span class="font-medium">Rentabilidad:</span> Aumento del consumo promedio por la facilidad de navegación del menú.</li>
+                            </ul>
+                        </div>
+                        <div class="flex justify-center items-center">
+                            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSqrWoKB0qG_LuhDbLFJZvaacSKLMtwcXdD7x3oPd_MvTFsjlto" alt="Mockup de la aplicación" class="rounded-xl shadow-xl max-w-full h-auto">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="slide2" class="slide presentation-slide">
+                    <h2 class="text-3xl font-extrabold text-[var(--color-primary)] border-b-4 border-[var(--color-accent)] pb-3 mb-6">2. Interfaz y Lógica: El Flujo de la App</h2>
+                    <p class="mb-8 text-lg">El flujo se organiza en pantallas lógicas (frm) para una experiencia de usuario lineal y sin confusiones.</p>
+                    <div class="flex flex-wrap items-center justify-center p-6 bg-gray-50 rounded-xl shadow-inner">
+                        <span class="bg-blue-200 text-blue-800 p-3 rounded-xl font-bold text-sm shadow-md">frmInicio</span>
+                        <i class="fas fa-arrow-right mx-4 text-xl text-gray-500 hidden sm:block"></i>
+                        <i class="fas fa-arrow-down my-2 text-xl text-gray-500 sm:hidden"></i>
+                        
+                        <span class="bg-green-200 text-green-800 p-3 rounded-xl font-bold text-sm shadow-md">frmPedido (Mesa)</span>
+                        <i class="fas fa-arrow-right mx-4 text-xl text-gray-500 hidden sm:block"></i>
+                        <i class="fas fa-arrow-down my-2 text-xl text-gray-500 sm:hidden"></i>
+
+                        <span class="bg-yellow-200 text-yellow-800 p-3 rounded-xl font-bold text-sm shadow-md">frmescoger (Menú)</span>
+                        <i class="fas fa-arrow-right mx-4 text-xl text-gray-500 hidden sm:block"></i>
+                        <i class="fas fa-arrow-down my-2 text-xl text-gray-500 sm:hidden"></i>
+
+                        <div class="flex flex-col items-start space-y-2 mt-4 sm:mt-0">
+                            <span class="bg-red-200 text-red-800 p-2 rounded-lg font-bold text-xs shadow-sm">frmComidas</span>
+                            <span class="bg-red-200 text-red-800 p-2 rounded-lg font-bold text-xs shadow-sm">frmBebidas</span>
+                            <span class="bg-red-200 text-red-800 p-2 rounded-lg font-bold text-xs shadow-sm">frmPostres</span>
+                        </div>
+                        
+                        <i class="fas fa-arrow-right mx-4 text-xl text-gray-500 hidden sm:block"></i>
+                        <i class="fas fa-arrow-down my-2 text-xl text-gray-500 sm:hidden"></i>
+                        <span class="bg-[var(--color-primary)] text-white p-3 rounded-xl font-bold text-sm shadow-md">Pedido Final</span>
+                    </div>
+                </section>
+
+                <section id="slide3" class="slide presentation-slide">
+                    <h2 class="text-3xl font-extrabold text-[var(--color-primary)] border-b-4 border-[var(--color-accent)] pb-3 mb-6">3. Código Usado en Cada Parte (Fragmentos Clave)</h2>
+                    <p class="mb-4">Ejemplos de cómo se maneja la lógica y la estructura en HTML y JavaScript.</p>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-100">
+                            <h4 class="text-lg font-semibold text-[var(--color-primary)] mb-2 flex items-center"><i class="fas fa-mouse-pointer mr-2"></i> 1. Inicio: Escucha del Botón</h4>
+                            <button class="btn secondary-btn toggle-code-btn" data-target="code1">Ver Código</button>
+                            <pre id="code1" class="code-block mt-3 hidden bg-gray-800 text-white p-3 rounded-lg overflow-x-auto text-xs">
+&lt;!-- index.html (Fragmento del botón) -->
+&lt;button id="btnInicio" onclick="showSlide(1)">Comenzar&lt;/button>
+
+&lt;script>
+// funciones.js (Lógica)
+document.getElementById('btnInicio').addEventListener('click', () => {
+    showSlide(1); 
+});
+&lt;/script></pre>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-100">
+                            <h4 class="text-lg font-semibold text-[var(--color-primary)] mb-2 flex items-center"><i class="fas fa-tag mr-2"></i> 2. Pedido: Guardar la Selección de Mesa</h4>
+                            <button class="btn secondary-btn toggle-code-btn" data-target="code2">Ver Código</button>
+                            <pre id="code2" class="code-block mt-3 hidden bg-gray-800 text-white p-3 rounded-lg overflow-x-auto text-xs">
+&lt;!-- index.html (Botón de mesa) -->
+&lt;button onclick="selectMesa('Mesa para dos')" class="table-btn">...&lt;/button>
+
+&lt;script>
+// funciones.js
+let mesaSeleccionada = ""; 
+
+function selectMesa(mesa) {
+    mesaSeleccionada = mesa;
+    updateCartDisplay(); // Actualiza el resumen de mesa
+    showAppScreen('frmescoger'); 
+}
+&lt;/script></pre>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-100">
+                            <h4 class="text-lg font-semibold text-[var(--color-primary)] mb-2 flex items-center"><i class="fas fa-list mr-2"></i> 3. Escoger: Navegación de Menú</h4>
+                            <button class="btn secondary-btn toggle-code-btn" data-target="code3">Ver Código</button>
+                            <pre id="code3" class="code-block mt-3 hidden bg-gray-800 text-white p-3 rounded-lg overflow-x-auto text-xs">
+&lt;!-- index.html -->
+&lt;button id="btnComidas" class="menu-type-btn" 
+    onclick="selectMenu('Comidas')">
+    &lt;i class="fas fa-burger">&lt;/i> Comidas
+&lt;/button></pre>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-100">
+                            <h4 class="text-lg font-semibold text-[var(--color-primary)] mb-2 flex items-center"><i class="fas fa-cart-plus mr-2"></i> 4. Carrito: Añadir Ítem</h4>
+                            <button class="btn secondary-btn toggle-code-btn" data-target="code4">Ver Código</button>
+                            <pre id="code4" class="code-block mt-3 hidden bg-gray-800 text-white p-3 rounded-lg overflow-x-auto text-xs">
+&lt;!-- index.html (En la tarjeta del menú) -->
+&lt;button onclick="addItem('Tiramisú', 6.00)" 
+    class="btn add-btn">Añadir ($6.00)&lt;/button>
+
+&lt;script>
+// funciones.js
+function addItem(name, price) {
+    // Lógica para añadir o incrementar cantidad
+    cart.push({ name, price, quantity: 1 });
+    subtotal += price;
+    updateCartDisplay(); 
+}
+&lt;/script></pre>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-100">
+                            <h4 class="text-lg font-semibold text-[var(--color-primary)] mb-2 flex items-center"><i class="fas fa-database mr-2"></i> 5. BD: Creación de Tabla Pedidos</h4>
+                            <button class="btn secondary-btn toggle-code-btn" data-target="code5">Ver Código</button>
+                            <pre id="code5" class="code-block mt-3 hidden bg-gray-800 text-white p-3 rounded-lg overflow-x-auto text-xs">
+-- Pseudocódigo SQL para la tabla principal
+CREATE TABLE pedidos (
+    pedido_id INT PRIMARY KEY AUTO_INCREMENT,
+    mesa_id VARCHAR(50) NOT NULL,
+    hora_pedido TIMESTAMP,
+    total DECIMAL(10, 2) NOT NULL,
+    estado VARCHAR(20) DEFAULT 'pendiente'
+);</pre>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-xl shadow-md border border-gray-100">
+                            <h4 class="text-lg font-semibold text-[var(--color-primary)] mb-2 flex items-center"><i class="fas fa-exchange-alt mr-2"></i> 6. Conexión: Fetch de Productos</h4>
+                            <button class="btn secondary-btn toggle-code-btn" data-target="code6">Ver Código</button>
+                            <pre id="code6" class="code-block mt-3 hidden bg-gray-800 text-white p-3 rounded-lg overflow-x-auto text-xs">
+// funciones.js - Envío del Pedido
+function submitOrder() {
+    const payload = {
+        mesa: mesaSeleccionada,
+        items: cart,
+        total: subtotal
+    };
+
+    fetch('https://api.restaurant.com/pedidos', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log("Pedido enviado con éxito.");
+        }
+    });
+}</pre>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="slide4" class="slide presentation-slide">
+                    <h2 class="text-3xl font-extrabold text-[var(--color-primary)] border-b-4 border-[var(--color-accent)] pb-3 mb-6">4. Base de Datos: Esquema y Relaciones</h2>
+                    <p class="mb-6 text-lg">Se requiere un esquema relacional sólido para manejar la concurrencia de pedidos y el inventario.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-gray-50 p-6 rounded-xl shadow-inner">
+                            <h3 class="text-2xl font-bold text-[var(--color-accent)] mb-3">Tablas Principales</h3>
+                            <ul class="list-disc ml-5 space-y-2 text-gray-700">
+                                <li>**Productos:** ID, nombre, precio, categoría, stock.</li>
+                                <li>**Mesas:** ID, capacidad, estado (ocupada/libre).</li>
+                                <li>**Usuarios:** ID, nombre, rol (cocina/camarero/admin).</li>
+                            </ul>
+
+                            <h3 class="text-2xl font-bold text-[var(--color-accent)] mt-6 mb-3">Tablas Transaccionales</h3>
+                            <ul class="list-disc ml-5 space-y-2 text-gray-700">
+                                <li>**Pedidos:** `pedido_id` (PK), `mesa_id` (FK), `hora_pedido`, `total`, `estado`.</li>
+                                <li>**Detalle_Pedidos:** `detalle_id` (PK), `pedido_id` (FK), `producto_id` (FK), `cantidad`, `precio_unitario`.</li>
+                            </ul>
+                        </div>
+                        <div class="flex justify-center items-center">
+                            <img src="https://i.ytimg.com/vi/hlTlhKxo4Ek/maxresdefault.jpg" alt="Diagrama de base de datos" class="rounded-xl shadow-lg max-w-full h-auto">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="slide5" class="slide presentation-slide">
+                    <h2 class="text-3xl font-extrabold text-[var(--color-primary)] border-b-4 border-[var(--color-accent)] pb-3 mb-6">5. Conexión: App/Web a BD (API REST)</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-[var(--color-accent)] mb-4">API REST y Endpoints</h3>
+                            <p class="mb-4">Se utiliza una API RESTful como intermediario entre la aplicación (cliente) y la base de datos (servidor).</p>
+                            <ul class="list-none pl-0 space-y-3">
+                                <li class="bg-green-100 p-3 rounded-lg font-mono text-sm shadow-sm"><code>GET /api/productos</code>: Obtener menú.</li>
+                                <li class="bg-blue-100 p-3 rounded-lg font-mono text-sm shadow-sm"><code>POST /api/pedidos</code>: Enviar la nueva orden.</li>
+                                <li class="bg-yellow-100 p-3 rounded-lg font-mono text-sm shadow-sm"><code>PATCH /api/pedidos/{id}</code>: Actualizar estado.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-[var(--color-accent)] mb-4">Mock de Respuesta JSON (GET /productos):</h3>
+                            <pre class="bg-gray-100 text-gray-800 p-4 rounded-lg overflow-x-auto text-xs border border-gray-300 shadow-md">
+[
+    {
+        "id": 101,
+        "nombre": "Lomo Saltado",
+        "precio": 18.00,
+        "categoria": "Comida"
+    },
+    {
+        "id": 205,
+        "nombre": "Agua Mineral",
+        "precio": 2.50,
+        "categoria": "Bebida"
+    }
+]</pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="slide6" class="slide presentation-slide">
+                    <h2 class="text-3xl font-extrabold text-[var(--color-primary)] border-b-4 border-[var(--color-accent)] pb-3 mb-6">6. Base de Datos: Muestra de Datos de Pedidos</h2>
+                    <p class="mb-6 text-lg">Ejemplo de la tabla <code>Pedidos</code> con el estado en tiempo real:</p>
+                    <div class="overflow-x-auto rounded-lg shadow-xl">
+                        <table class="min-w-full bg-white">
+                            <thead>
+                                <tr class="bg-[var(--color-primary)] text-white text-left text-sm font-semibold uppercase">
+                                    <th class="py-3 px-4">ID Pedido</th>
+                                    <th class="py-3 px-4">Mesa</th>
+                                    <th class="py-3 px-4">Hora</th>
+                                    <th class="py-3 px-4">Total</th>
+                                    <th class="py-3 px-4">Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b hover:bg-gray-50">
+                                    <td class="py-3 px-4 font-mono">1005</td>
+                                    <td class="py-3 px-4">Mesa 4</td>
+                                    <td class="py-3 px-4">20:20:15</td>
+                                    <td class="py-3 px-4 font-mono">$45.50</td>
+                                    <td class="py-3 px-4"><span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">Completado</span></td>
+                                </tr>
+                                <tr class="border-b hover:bg-gray-50">
+                                    <td class="py-3 px-4 font-mono">1006</td>
+                                    <td class="py-3 px-4">Mesa 1</td>
+                                    <td class="py-3 px-4">20:35:40</td>
+                                    <td class="py-3 px-4 font-mono">$28.00</td>
+                                    <td class="py-3 px-4"><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-semibold">Enviado</span></td>
+                                </tr>
+                                <tr class="border-b hover:bg-gray-50">
+                                    <td class="py-3 px-4 font-mono">1007</td>
+                                    <td class="py-3 px-4">Mesa 8</td>
+                                    <td class="py-3 px-4">21:01:10</td>
+                                    <td class="py-3 px-4 font-mono">$15.75</td>
+                                    <td class="py-3 px-4"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">Pendiente</span></td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="py-3 px-4 font-mono">1008</td>
+                                    <td class="py-3 px-4">Mesa 2</td>
+                                    <td class="py-3 px-4">21:15:33</td>
+                                    <td class="py-3 px-4 font-mono">$5.50</td>
+                                    <td class="py-3 px-4"><span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">Completado</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section id="slide7" class="slide presentation-slide">
+                    <h2 class="text-3xl font-extrabold text-[var(--color-primary)] border-b-4 border-[var(--color-accent)] pb-3 mb-6">7. Forma de Pago y Resumen Final</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Resumen de la Orden</h3>
+                            <div id="payment-cart-summary" class="bg-gray-50 p-6 rounded-xl shadow-inner border-l-4 border-[var(--color-accent)] mb-6">
+                                <p class="text-lg font-medium mb-2">**Mesa Seleccionada:** <span id="summary-mesa" class="font-semibold text-[var(--color-primary)]">N/A</span></p>
+                                <p class="text-lg font-medium mb-4">**Subtotal:** <span id="summary-subtotal" class="font-semibold text-gray-700">$0.00</span></p>
+                                <p class="text-3xl font-extrabold text-red-600 border-t pt-3">Total Final: <span id="summary-total">$0.00</span></p>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Opciones de Pago Ficticias:</h3>
+                            <div class="flex flex-wrap gap-4">
+                                <button class="btn secondary-btn px-6 py-3"><i class="fas fa-credit-card mr-2"></i> Tarjeta (Visa/MC)</button>
+                                <button class="btn secondary-btn px-6 py-3"><i class="fas fa-money-bill-wave mr-2"></i> Efectivo</button>
+                                <button class="btn secondary-btn px-6 py-3"><i class="fas fa-qrcode mr-2"></i> Pago QR</button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center items-center p-6 bg-white rounded-xl shadow-lg border border-gray-200">
+                            <h4 class="text-xl font-semibold mb-3 text-gray-700">Placeholder de Imagen (2ª Imagen)</h4>
+                            <img src="https://www.elcuadernoazul.es/wp-content/smush-webp/2023/02/2023-02-17-Factura-Restaurante-Revoltosa-Prado-1362x1920.jpg.webp" alt="Placeholder para imagen de pago" class="rounded-lg shadow-md max-w-full h-auto">
+                            <p class="text-sm text-gray-500 mt-3 text-center">Espacio reservado para una captura del código QR de pago o el terminal.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="slide8" class="slide presentation-slide">
+                    <h2 class="text-3xl font-extrabold text-[var(--color-primary)] border-b-4 border-[var(--color-accent)] pb-3 mb-6">8. ¡Gracias! Y Próximos Pasos</h2>
+                    <div class="content-section text-center p-10 bg-white rounded-xl shadow-2xl">
+                        <i class="fas fa-hands-clapping text-6xl text-[var(--color-accent)] mb-6 animate-pulse"></i>
+                        <p class="text-2xl font-extrabold mb-4 text-gray-800">Presentación del sistema de pedidos concluida.</p>
+                        <p class="text-lg text-gray-600 mb-8">Este archivo consolidado contiene todo lo necesario!</p>
+
+                   <a href="https://drive.google.com/drive/folders/15uqzlxbHwgwOmYeCPg1hh1GSy8F4ymJb?usp=drive_link" 
+   class="btn primary-btn large-btn px-10 py-4 text-xl" 
+   target="_blank" 
+   download>
+    <i class="fas fa-download mr-2"></i> Descargar Código Fuente (.zip)
+</a>
+                        <p class="text-sm text-gray-500 mt-4">*(La descarga es un mock en la consola, pero demuestra una CTA)*</p>
+                    </div>
+                </section>
+
+                <section id="frmPedido" class="slide app-screen hidden flex justify-center items-center bg-gradient-to-br from-white to-[#E0F7FA]">
+                    <div class="screen-content max-w-md w-full p-8 bg-white rounded-xl shadow-2xl text-center">
+                        <h2 class="text-3xl font-bold mb-8 text-[var(--color-primary)]">Paso 1: ¿Para cuántas personas?</h2>
+                        <div class="grid grid-cols-3 gap-4">
+                            <button id="btnm1" class="btn secondary-btn table-btn flex flex-col items-center p-4" onclick="selectMesa('Mesa para uno')">
+                                <i class="fas fa-user fa-2x mb-2 text-blue-500"></i><span class="text-sm font-semibold">Mesa 1</span>
+                            </button>
+                            <button id="btnm2" class="btn secondary-btn table-btn flex flex-col items-center p-4" onclick="selectMesa('Mesa para dos')">
+                                <i class="fas fa-user-friends fa-2x mb-2 text-blue-500"></i><span class="text-sm font-semibold">Mesa 2</span>
+                            </button>
+                            <button id="btnm3" class="btn secondary-btn table-btn flex flex-col items-center p-4" onclick="selectMesa('Mesa para tres')">
+                                <i class="fas fa-users fa-2x mb-2 text-blue-500"></i><span class="text-sm font-semibold">Mesa 3+</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="frmescoger" class="slide app-screen hidden flex justify-center items-center bg-gradient-to-br from-white to-[#E0F7FA]">
+                    <div class="screen-content max-w-xl w-full p-8 bg-white rounded-xl shadow-2xl text-center">
+                        <h2 class="text-3xl font-bold mb-8 text-[var(--color-primary)]">Paso 2: ¿Qué deseas ordenar?</h2>
+                        <div class="grid grid-cols-3 gap-6">
+                            <button id="btnComidas" class="btn primary-btn menu-type-btn flex flex-col items-center p-6 text-lg" onclick="selectMenu('Comidas')">
+                                <i class="fas fa-burger fa-3x mb-3"></i> Comidas
+                            </button>
+                            <button id="btnBebidas" class="btn primary-btn menu-type-btn flex flex-col items-center p-6 text-lg" onclick="selectMenu('Bebidas')">
+                                <i class="fas fa-cocktail fa-3x mb-3"></i> Bebidas
+                            </button>
+                            <button id="btnPostres" class="btn primary-btn menu-type-btn flex flex-col items-center p-6 text-lg" onclick="selectMenu('Postres')">
+                                <i class="fas fa-ice-cream fa-3x mb-3"></i> Postres
+                            </button>
+                        </div>
+                        <button class="btn secondary-btn mt-8 px-8 py-3 text-lg" onclick="showAppScreen('frmFinalizar')"><i class="fas fa-shopping-cart mr-2"></i> Ver Carrito y Pagar</button>
+                    </div>
+                </section>
+
+                <section id="frmComidas" class="slide menu-screen hidden">
+                    <h2 class="text-3xl font-bold mb-6 text-[var(--color-primary)]">Comidas Principales</h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-4 rounded-xl shadow-md flex items-center justify-between">
+                            <div>
+                                <h4 class="text-lg font-semibold">Lomo Saltado <i class="fas fa-plate-wheat text-lg text-amber-500 ml-2"></i></h4>
+                                <p class="text-sm text-gray-600">Carne, cebolla, tomate, papas fritas.</p>
+                            </div>
+                            <button class="btn primary-btn add-btn text-sm" onclick="addItem('Lomo Saltado', 18.00)"><i class="fas fa-plus mr-1"></i> $18.00</button>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-xl shadow-md flex items-center justify-between">
+                            <div>
+                                <h4 class="text-lg font-semibold">Ceviche Clásico <i class="fas fa-fish text-lg text-blue-500 ml-2"></i></h4>
+                                <p class="text-sm text-gray-600">Pescado blanco marinado con limón.</p>
+                            </div>
+                            <button class="btn primary-btn add-btn text-sm" onclick="addItem('Ceviche Clásico', 15.00)"><i class="fas fa-plus mr-1"></i> $15.00</button>
+                        </div>
+                    </div>
+                    <button id="btnAcepComidas" class="btn secondary-btn mt-8 px-6 py-3" onclick="goBackToChooser()">
+                        <i class="fas fa-check mr-2"></i> Aceptar y Volver al Menú
+                    </button>
+                </section>
+
+                <section id="frmBebidas" class="slide menu-screen hidden">
+                    <h2 class="text-3xl font-bold mb-6 text-[var(--color-primary)]">Bebidas y Refrescos</h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-4 rounded-xl shadow-md flex items-center justify-between">
+                            <div>
+                                <h4 class="text-lg font-semibold">Vino de la Casa <i class="fas fa-wine-glass text-lg text-purple-500 ml-2"></i></h4>
+                                <p class="text-sm text-gray-600">Copa de vino tinto o blanco.</p>
+                            </div>
+                            <button class="btn primary-btn add-btn text-sm" onclick="addItem('Vino de la Casa (Copa)', 7.50)"><i class="fas fa-plus mr-1"></i> $7.50</button>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-xl shadow-md flex items-center justify-between">
+                            <div>
+                                <h4 class="text-lg font-semibold">Jugo de Frutas <i class="fas fa-glass-water text-lg text-green-500 ml-2"></i></h4>
+                                <p class="text-sm text-gray-600">Naranja, fresa o piña natural.</p>
+                            </div>
+                            <button class="btn primary-btn add-btn text-sm" onclick="addItem('Jugo de Frutas', 4.00)"><i class="fas fa-plus mr-1"></i> $4.00</button>
+                        </div>
+                    </div>
+                    <button id="btnAcepBebidas" class="btn secondary-btn mt-8 px-6 py-3" onclick="goBackToChooser()">
+                        <i class="fas fa-check mr-2"></i> Aceptar y Volver al Menú
+                    </button>
+                </section>
+
+                <section id="frmPostres" class="slide menu-screen hidden">
+                    <h2 class="text-3xl font-bold mb-6 text-[var(--color-primary)]">Postres</h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-4 rounded-xl shadow-md flex items-center justify-between">
+                            <div>
+                                <h4 class="text-lg font-semibold">Tiramisú <i class="fas fa-cake-slice text-lg text-brown-500 ml-2"></i></h4>
+                                <p class="text-sm text-gray-600">Clásico postre italiano con café.</p>
+                            </div>
+                            <button class="btn primary-btn add-btn text-sm" onclick="addItem('Tiramisú', 6.00)"><i class="fas fa-plus mr-1"></i> $6.00</button>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-xl shadow-md flex items-center justify-between">
+                            <div>
+                                <h4 class="text-lg font-semibold">Helado Artesanal <i class="fas fa-ice-cream text-lg text-pink-500 ml-2"></i></h4>
+                                <p class="text-sm text-gray-600">Vainilla o chocolate.</p>
+                            </div>
+                            <button class="btn primary-btn add-btn text-sm" onclick="addItem('Helado Artesanal', 5.50)"><i class="fas fa-plus mr-1"></i> $5.50</button>
+                        </div>
+                    </div>
+                    <button id="btnAcepPostres" class="btn secondary-btn mt-8 px-6 py-3" onclick="goBackToChooser()">
+                        <i class="fas fa-check mr-2"></i> Aceptar y Volver al Menú
+                    </button>
+                </section>
+
+                <section id="frmFinalizar" class="slide menu-screen hidden flex justify-center items-center">
+                    <div class="screen-content max-w-lg w-full p-8 bg-white rounded-xl shadow-2xl text-center">
+                        <h2 class="text-3xl font-bold mb-6 text-[var(--color-primary)]">Paso 3: Finalizar Pedido</h2>
+                        <p class="text-lg font-semibold mb-3">Mesa: <span id="final-mesa-display" class="text-red-500"></span></p>
+                        <div id="final-cart-items" class="cart-items-list text-left p-4 bg-gray-50 rounded-lg max-h-48 overflow-y-auto mb-4 border">
+                            <p class="text-gray-500 text-sm">Aún no hay ítems en el carrito.</p>
+                        </div>
+                        <p class="text-2xl font-bold border-t pt-3">Subtotal: <span id="final-subtotal-display" class="text-red-600">$0.00</span></p>
+                        <button class="btn primary-btn large-btn mt-6 px-10 py-3 text-lg" onclick="submitOrder()">
+                            <i class="fas fa-paper-plane mr-2"></i> Enviar Pedido a Cocina
+                        </button>
+                        <button class="btn secondary-btn mt-4 px-6 py-2" onclick="goBackToChooser()">
+                            <i class="fas fa-undo mr-2"></i> Volver al Menú
+                        </button>
+                    </div>
+                </section>
+                
+                <div id="floating-cart" class="floating-cart hidden">
+                    <h3 class="text-xl font-extrabold text-[var(--color-primary)]"><i class="fas fa-shopping-basket mr-2"></i> Carrito</h3>
+                    <p id="mesa-display" class="text-xs text-gray-500 mb-3">Mesa: No seleccionada</p>
+                    <div id="cart-content" class="text-gray-700">
+                        <p class="text-xs text-gray-400">Añade un artículo.</p>
+                    </div>
+                    <hr class="my-3 border-gray-200">
+                    <p class="text-2xl font-extrabold text-red-600">Total: <span id="cart-subtotal">$0.00</span></p>
+                </div>
+
+                <div id="navigation-controls" class="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-4 p-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg border border-gray-200">
+                    <button id="prev-btn" class="nav-btn primary-btn px-4 py-2"><i class="fas fa-chevron-left"></i> Anterior</button>
+                    <span id="slide-counter" class="text-gray-600 font-semibold text-sm">Slide 1 de 8</span>
+                    <button id="next-btn" class="nav-btn primary-btn px-4 py-2">Siguiente <i class="fas fa-chevron-right"></i></button>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="funciones.js"></script>
+</body>
+</html>
