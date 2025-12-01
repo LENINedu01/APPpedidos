@@ -1,0 +1,129 @@
+/* FIX: Usar type="text/tailwindcss" para que el editor reconozca @apply */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Configuraciones de Tailwind y variables de color */
+:root {
+    --color-primary: #00897B; /* Verde Menta Oscuro */
+    --color-accent: #1DE9B6; /* Azul/Verde Brillante */
+    --color-background: #F8F9FA; /* Fondo muy claro */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-background);
+}
+
+/* Estilos base de la presentación */
+#presentation-container {
+    /* Eliminado: display: flex; min-height: 100vh;
+       Esto se maneja ahora en el div contenedor padre en index.html */
+    min-height: 80vh; /* Para que la tarjeta tenga una altura visible */
+}
+
+/* Área de contenido */
+#content-area {
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+    padding: 40px;
+}
+
+/* Estilos de Slides */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow-y: auto;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0) !important;
+}
+
+/* Transiciones de Slide (Slide/Fade) */
+.slide.prev { transform: translateX(-100%); }
+.slide.prev.active { transform: translateX(-100%); opacity: 0; } /* FIX para asegurar que salga */
+.slide.next { transform: translateX(100%); }
+.slide.next.active { transform: translateX(100%); opacity: 0; } /* FIX para asegurar que salga */
+
+/* Pantalla de Inicio (Animación) */
+.slide-animation {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    animation: fadeInScale 0.8s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.slide-animation:nth-child(1) { animation-delay: 0.1s; }
+.slide-animation:nth-child(2) { animation-delay: 0.3s; }
+.slide-animation:nth-child(3) { animation-delay: 0.5s; }
+
+/* Carrito Flotante */
+.floating-cart {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 250px;
+    z-index: 100;
+    max-height: 80vh;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    padding: 5px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+/* Responsive para Sidebar en móvil */
+@media (max-width: 900px) {
+    #presentation-container { flex-direction: column; }
+    #sidebar {
+        width: 100%;
+        height: 60px;
+        overflow-x: auto;
+        padding: 10px;
+        white-space: nowrap;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        z-index: 20;
+    }
+    #slide-nav { display: flex; }
+    #slide-nav li { flex-shrink: 0; margin-right: 10px; padding: 8px 12px; font-size: 12px; }
+    #slide-nav li i, #sidebar h2 { display: none; }
+    #content-area { padding: 20px; }
+    .floating-cart { top: auto; bottom: 70px; right: 10px; width: 180px; }
+}
+
+/* Utilerías Tailwind personalizadas */
+.btn {
+    @apply inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-150 transform hover:scale-[1.01] active:scale-[0.99];
+}
+
+.primary-btn {
+    @apply bg-[var(--color-primary)] text-white hover:bg-[#00796B] focus:ring-[var(--color-primary)];
+}
+
+.secondary-btn {
+    @apply bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200 focus:ring-gray-400;
+}
